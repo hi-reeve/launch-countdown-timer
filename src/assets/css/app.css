@@ -16,10 +16,10 @@ body {
     @apply font-red-hat-text;
 }
 .main {
-    @apply w-full min-h-screen bg-main-texture bg-dark-blue-dark p-8;
+    @apply w-full min-h-screen bg-main-texture bg-dark-blue p-8;
 }
 .launching--text {
-    @apply lg:mt-10
+    @apply mt-2
 	lg:text-3xl
 	text-2xl
 	font-bold
@@ -55,39 +55,41 @@ body {
 }
 
 .timer--time {
-    @apply text-soft-red font-bold text-7xl;
+    @apply text-soft-red font-bold text-6xl relative;
 }
 .timer--container {
     @apply flex flex-col items-center justify-center mx-5 relative;
 }
 .timer--container::before {
     content: "";
-    top: calc(50% - 1.9rem);
-    left: -4px;
-    @apply block w-2 h-2 rounded-full bg-dark-blue-dark absolute   z-10;
+    top: calc(50% - 2rem);
+    @apply block w-3 h-3 -left-1 rounded-full bg-dark-blue-dark absolute z-10;
 }
 .timer--container::after {
     content: "";
-    top: calc(50% - 1.9rem);
-    right: -4px;
-    @apply block w-2 h-2 rounded-full bg-dark-blue-dark absolute   z-10;
+    top: calc(50% - 2rem);
+    @apply block w-3 h-3 -right-1 rounded-full bg-dark-blue-dark absolute z-10;
 }
 .timer--block .top {
-    box-shadow: 0 -5px 0px 2px var(--dark-blue-default);
-    @apply w-40 h-20 overflow-hidden  bg-dark-blue-light rounded-t flex flex-col  items-center justify-center border-dark-blue-dark border-b;
+	transform: perspective(200px) rotateX(-5deg);
+    box-shadow: 0 -5px 0px 5px var(--dark-blue-default-dark);
+    @apply w-28 h-12 overflow-hidden  bg-dark-blue-light rounded-t flex flex-col  items-center justify-center;
 }
 .timer--num-top {
-    @apply transform translate-y-[50%];
+    @apply transform translate-y-[40%];
 }
 
 .timer--block .bottom {
-    transform: perspective(200px) rotateX(0deg);
-    box-shadow: 0 5px 0px 2px var(--dark-blue-default);
-    @apply w-40 h-20 overflow-hidden  bg-dark-blue-light rounded-b flex flex-col items-center justify-center  border-t border-dark-blue-dark;
+    transform: perspective(200px) rotateX(5deg);
+    box-shadow: 0 10px 0px 0px var(--dark-blue-dark);
+    @apply w-28 h-12 overflow-hidden  bg-dark-blue-light rounded-b flex flex-col items-center justify-center;
 }
 .timer--num-bottom {
-    @apply transform translate-y-[-50%];
+    @apply transform translate-y-[-40%];
+}
+.timer--num-bottom.back{
+	@apply absolute left-0 bottom-0;
 }
 .timer--captions {
-    @apply text-blue-grayish text-2xl mt-5 uppercase font-bold tracking-[0.25rem];
+    @apply text-blue-grayish text-base mt-5 uppercase font-bold tracking-[0.25rem];
 }
