@@ -73,7 +73,8 @@ body {
     @apply block w-2 h-2 rounded-full bg-dark-blue-dark absolute   z-10;
 }
 .timer--block .top {
-    @apply w-40 h-20 overflow-hidden  bg-dark-blue-light rounded-t flex flex-col  items-center justify-center border-blue-grayish border-b;
+    box-shadow: 0 -5px 0px 2px var(--dark-blue-default);
+    @apply w-40 h-20 overflow-hidden  bg-dark-blue-light rounded-t flex flex-col  items-center justify-center border-dark-blue-dark border-b;
 }
 .timer--num-top {
     @apply transform translate-y-[50%];
@@ -81,8 +82,8 @@ body {
 
 .timer--block .bottom {
     transform: perspective(200px) rotateX(0deg);
-    box-shadow: 0 5px 0px 1px var(--dark-blue-default);
-    @apply w-40 h-20 overflow-hidden  bg-dark-blue-light rounded-b flex flex-col items-center justify-center  border-t border-blue-grayish;
+    box-shadow: 0 5px 0px 2px var(--dark-blue-default);
+    @apply w-40 h-20 overflow-hidden  bg-dark-blue-light rounded-b flex flex-col items-center justify-center  border-t border-dark-blue-dark;
 }
 .timer--num-bottom {
     @apply transform translate-y-[-50%];
