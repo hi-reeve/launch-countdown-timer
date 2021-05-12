@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+    :root {
+        --grayish-blue: hsl(237, 18%, 59%);
+        --soft-red: hsl(345, 95%, 68%);
+        --dark-blue-light: hsl(236, 21%, 26%);
+        --dark-blue-default: hsl(235, 16%, 14%);
+        --dark-blue-dark: hsl(234, 17%, 12%);
+        --icon-default-color: #8385a9;
+    }
+}
+
+body {
+    @apply font-red-hat-text;
+}
+.main {
+    @apply w-full min-h-screen bg-main-texture bg-dark-blue-dark p-8;
+}
+.launching--text {
+    @apply lg:mt-10
+	lg:text-3xl
+	text-2xl
+	font-bold
+	text-white
+	uppercase
+	tracking-widest
+	text-center
+	w-full;
+}
+
+.pattern-hills {
+    @apply w-full absolute bottom-0 left-0;
+}
+
+.footer {
+    @apply w-full
+	lg:pb-0 pb-8
+	flex
+	items-center
+	justify-center
+	absolute
+	lg:bottom-10
+	bottom-0
+	left-0;
+}
+
+.social-links {
+    @apply w-8
+        h-8 hover:text-soft-red text-icon-default cursor-pointer transition-all duration-300 ease-in-out mx-4;
+}
+.timer-wrapper {
+    @apply flex lg:flex-row flex-col lg:w-3/4 w-full items-center justify-center lg:absolute top-0 bottom-0 left-0 right-0 lg:mt-0 my-10 mx-auto;
+}
+
+.timer--time {
+    @apply text-soft-red font-bold text-7xl;
+}
+.timer--container {
+    @apply flex flex-col items-center justify-center mx-5 relative;
+}
+.timer--container::before {
+    content: "";
+    top: calc(50% - 1.9rem);
+    left: -4px;
+    @apply block w-2 h-2 rounded-full bg-dark-blue-dark absolute   z-10;
+}
+.timer--container::after {
+    content: "";
+    top: calc(50% - 1.9rem);
+    right: -4px;
+    @apply block w-2 h-2 rounded-full bg-dark-blue-dark absolute   z-10;
+}
+.timer--block .top {
+    @apply w-40 h-20 overflow-hidden  bg-dark-blue-light rounded-t flex flex-col  items-center justify-center border-blue-grayish border-b;
+}
+.timer--num-top {
+    @apply transform translate-y-[50%];
+}
+
+.timer--block .bottom {
+    transform: perspective(200px) rotateX(0deg);
+    box-shadow: 0 5px 0px 1px var(--dark-blue-default);
+    @apply w-40 h-20 overflow-hidden  bg-dark-blue-light rounded-b flex flex-col items-center justify-center  border-t border-blue-grayish;
+}
+.timer--num-bottom {
+    @apply transform translate-y-[-50%];
+}
+.timer--captions {
+    @apply text-blue-grayish text-2xl mt-5 uppercase font-bold tracking-[0.25rem];
+}
